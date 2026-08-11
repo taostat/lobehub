@@ -86,6 +86,19 @@ describe('LobeSayGM - custom features', () => {
       const stream = params.chatCompletion!.handleTransformResponseToStream!(mockCompletion as any);
       expect(stream).toBeDefined();
     });
+
+    it('should pin Sol reasoning effort to none when tools are present', async () => {
+      await instance.chat({
+        messages: [{ content: 'Hello', role: 'user' }],
+        model: 'gpt-5.6-sol',
+        reasoning_effort: 'high',
+        stream: true,
+        tools: [{ function: { name: 'test', parameters: {} }, type: 'function' }],
+      });
+
+      const calledPayload = (instance['client'].chat.completions.create as any).mock.calls[0][0];
+      expect(calledPayload.reasoning_effort).toBe('none');
+    });
   });
 
   describe('models function', () => {
@@ -93,7 +106,11 @@ describe('LobeSayGM - custom features', () => {
       const mockClient = {
         models: {
           list: vi.fn().mockResolvedValue({
-            data: [{ id: 'gpt-5.4' }, { id: 'gpt-5.6-sol' }],
+            data: [
+              { api_shapes: ['chat.completions'], available: true, id: 'gpt-5.4' },
+              { api_shapes: ['chat.completions'], available: false, id: 'gpt-5.6-sol' },
+              { api_shapes: ['responses'], available: true, id: 'gpt-5.5-pro' },
+            ],
           }),
         },
       } as any;
@@ -103,6 +120,7 @@ describe('LobeSayGM - custom features', () => {
       expect(mockClient.models.list).toHaveBeenCalledTimes(1);
       expect(models).toBeDefined();
       expect(Array.isArray(models)).toBe(true);
+      expect(models.map((model) => model.id)).toEqual(['gpt-5.4']);
     });
 
     it('should handle empty models list', async () => {
