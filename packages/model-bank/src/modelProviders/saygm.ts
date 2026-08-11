@@ -4,7 +4,7 @@ const SayGM: ModelProviderCard = {
   chatModels: [],
   checkModel: 'gpt-5.4',
   description:
-    'SayGM is a Bittensor inference subnet that serves frontier OpenAI models at open, gateway-priced rates through an OpenAI-compatible API.',
+    'SayGM is a Bittensor inference subnet that serves frontier models through an OpenAI-compatible API.',
   id: 'saygm',
   modelsUrl: 'https://saygm.com',
   name: 'SayGM',
