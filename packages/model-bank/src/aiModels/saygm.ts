@@ -28,8 +28,7 @@ const saygmChatModels: AIChatModelCard[] = [
       reasoning: true,
     },
     contextWindowTokens: 1_050_000,
-    description:
-      'GPT-5.6 Luna is optimized for cost-sensitive, high-volume workloads with the lowest price in the GPT-5.6 family.',
+    description: 'GPT-5.6 Luna is optimized for fast, high-volume workloads.',
     displayName: 'GPT-5.6 Luna',
     enabled: true,
     family: 'gpt',
@@ -47,8 +46,7 @@ const saygmChatModels: AIChatModelCard[] = [
       reasoning: true,
     },
     contextWindowTokens: 1_050_000,
-    description:
-      'GPT-5.6 Terra balances intelligence and cost for everyday professional work, competitive with GPT-5.5 at about half the price.',
+    description: 'GPT-5.6 Terra is a balanced model for everyday professional work.',
     displayName: 'GPT-5.6 Terra',
     enabled: true,
     family: 'gpt',
@@ -123,8 +121,7 @@ const saygmChatModels: AIChatModelCard[] = [
       reasoning: true,
     },
     contextWindowTokens: 1_000_000,
-    description:
-      'GPT-5.4 nano is OpenAI’s cheapest GPT-5.4-class model for simple high-volume tasks.',
+    description: 'GPT-5.4 nano is a compact GPT-5.4-class model for simple high-volume tasks.',
     displayName: 'GPT-5.4 nano',
     enabled: true,
     family: 'gpt',
