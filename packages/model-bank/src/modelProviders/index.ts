@@ -60,6 +60,7 @@ import QiniuProvider from './qiniu';
 import QwenProvider from './qwen';
 import ReplicateProvider from './replicate';
 import SambaNovaProvider from './sambanova';
+import SayGMProvider from './saygm';
 import Search1APIProvider from './search1api';
 import SenseNovaProvider from './sensenova';
 import SiliconCloudProvider from './siliconcloud';
@@ -210,6 +211,7 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   GiteeAIProvider,
   TaichuProvider,
   Ai360Provider,
+  SayGMProvider,
   Search1APIProvider,
   InfiniAIProvider,
   AkashChatProvider,
@@ -304,6 +306,7 @@ export { default as QiniuProviderCard } from './qiniu';
 export { default as QwenProviderCard } from './qwen';
 export { default as ReplicateProviderCard } from './replicate';
 export { default as SambaNovaProviderCard } from './sambanova';
+export { default as SayGMProviderCard } from './saygm';
 export { default as Search1APIProviderCard } from './search1api';
 export { default as SenseNovaProviderCard } from './sensenova';
 export { default as SiliconCloudProviderCard } from './siliconcloud';

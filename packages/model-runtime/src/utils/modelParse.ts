@@ -129,6 +129,11 @@ export const MODEL_LIST_CONFIGS = {
       'redux',
     ],
   },
+  saygm: {
+    functionCallKeywords: ['gpt-', 'o3', 'o4'],
+    reasoningKeywords: ['gpt-', 'o3', 'o4'],
+    visionKeywords: ['gpt-', 'o4'],
+  },
   v0: {
     functionCallKeywords: ['v0'],
     reasoningKeywords: ['v0-1.5'],
@@ -184,6 +189,7 @@ export const MODEL_OWNER_DETECTION_CONFIG = {
   openai: ['o1', 'o3', 'o4', 'gpt-'],
   qwen: ['qwen', 'qwq', 'qvq'],
   replicate: [],
+  saygm: ['gpt-', 'o3', 'o4'],
   v0: ['v0'],
   volcengine: ['doubao'],
   wenxin: ['ernie', 'qianfan'],
