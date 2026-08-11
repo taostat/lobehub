@@ -1,5 +1,5 @@
 import { mutate, useClientDataSWR } from '@/libs/swr';
-import { clientDataKeys, taskKeys } from '@/libs/swr/keys';
+import { projectionKeys, taskKeys } from '@/libs/swr/keys';
 import { getCacheScope } from '@/libs/swr/useCacheScope';
 import { taskService } from '@/services/task';
 import type { StoreSetter } from '@/store/types';
@@ -88,7 +88,7 @@ export class TaskListSliceActionImpl {
     await Promise.all([
       mutate(taskKeys.list(listAgentId, listQueryVisibility)),
       mutate(taskKeys.groupList(listAgentId, listVisibility)),
-      mutate(clientDataKeys.tasks(getCacheScope())),
+      mutate(projectionKeys.tasks(getCacheScope())),
     ]);
   };
 
