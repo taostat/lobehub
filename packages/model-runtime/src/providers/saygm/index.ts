@@ -8,6 +8,8 @@ import {
 import { MODEL_LIST_CONFIGS, processModelList } from '../../utils/modelParse';
 
 export interface SayGMModelCard {
+  api_shapes?: string[];
+  available?: boolean;
   id: string;
 }
 
@@ -27,6 +29,7 @@ export const params = {
 
       return {
         ...rest,
+        ...(rest.model === 'gpt-5.6-sol' && rest.tools?.length ? { reasoning_effort: 'none' } : {}),
         stream: payload.stream ?? true,
       } as any;
     },
@@ -51,7 +54,14 @@ export const params = {
         ? modelsPage
         : [];
 
-    return processModelList(modelList, MODEL_LIST_CONFIGS.saygm, 'saygm');
+    const chatModels = modelList.filter(
+      (model) =>
+        model.available === true &&
+        Array.isArray(model.api_shapes) &&
+        model.api_shapes.includes('chat.completions'),
+    );
+
+    return processModelList(chatModels, MODEL_LIST_CONFIGS.saygm, 'saygm');
   },
   provider: ModelProvider.SayGM,
 } satisfies OpenAICompatibleFactoryOptions;

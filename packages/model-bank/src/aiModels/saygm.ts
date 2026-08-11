@@ -1,16 +1,12 @@
 import type { AIChatModelCard } from '../types/aiModel';
 
 // SayGM is a Bittensor inference subnet gateway. It serves frontier OpenAI
-// models over the OpenAI chat.completions wire. Prices are USD per 1M tokens,
-// sourced from the live /v1/models catalog (gm-integration-facts).
+// models over the OpenAI chat.completions wire.
 const saygmChatModels: AIChatModelCard[] = [
   {
     abilities: {
       functionCall: true,
       reasoning: true,
-      search: true,
-      structuredOutput: true,
-      vision: true,
     },
     contextWindowTokens: 1_050_000,
     description:
@@ -21,17 +17,8 @@ const saygmChatModels: AIChatModelCard[] = [
     generation: 'gpt-5.6',
     id: 'gpt-5.6-sol',
     maxOutput: 128_000,
-    pricing: {
-      currency: 'USD',
-      units: [
-        { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 30, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
     settings: {
       extendParams: ['gpt5_6ReasoningEffort', 'textVerbosity'],
-      searchImpl: 'params',
     },
     type: 'chat',
   },
@@ -39,9 +26,6 @@ const saygmChatModels: AIChatModelCard[] = [
     abilities: {
       functionCall: true,
       reasoning: true,
-      search: true,
-      structuredOutput: true,
-      vision: true,
     },
     contextWindowTokens: 1_050_000,
     description:
@@ -52,17 +36,8 @@ const saygmChatModels: AIChatModelCard[] = [
     generation: 'gpt-5.6',
     id: 'gpt-5.6-luna',
     maxOutput: 128_000,
-    pricing: {
-      currency: 'USD',
-      units: [
-        { name: 'textInput', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.02, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 1.2, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
     settings: {
       extendParams: ['gpt5_6ReasoningEffort', 'textVerbosity'],
-      searchImpl: 'params',
     },
     type: 'chat',
   },
@@ -70,9 +45,6 @@ const saygmChatModels: AIChatModelCard[] = [
     abilities: {
       functionCall: true,
       reasoning: true,
-      search: true,
-      structuredOutput: true,
-      vision: true,
     },
     contextWindowTokens: 1_050_000,
     description:
@@ -83,17 +55,8 @@ const saygmChatModels: AIChatModelCard[] = [
     generation: 'gpt-5.6',
     id: 'gpt-5.6-terra',
     maxOutput: 128_000,
-    pricing: {
-      currency: 'USD',
-      units: [
-        { name: 'textInput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 12, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
     settings: {
       extendParams: ['gpt5_6ReasoningEffort', 'textVerbosity'],
-      searchImpl: 'params',
     },
     type: 'chat',
   },
@@ -101,9 +64,6 @@ const saygmChatModels: AIChatModelCard[] = [
     abilities: {
       functionCall: true,
       reasoning: true,
-      search: true,
-      structuredOutput: true,
-      vision: true,
     },
     contextWindowTokens: 1_000_000,
     description:
@@ -114,17 +74,8 @@ const saygmChatModels: AIChatModelCard[] = [
     generation: 'gpt-5.5',
     id: 'gpt-5.5',
     maxOutput: 128_000,
-    pricing: {
-      currency: 'USD',
-      units: [
-        { name: 'textInput', rate: 5, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 30, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
     settings: {
       extendParams: ['gpt5_2ReasoningEffort', 'textVerbosity'],
-      searchImpl: 'params',
     },
     type: 'chat',
   },
@@ -132,9 +83,6 @@ const saygmChatModels: AIChatModelCard[] = [
     abilities: {
       functionCall: true,
       reasoning: true,
-      search: true,
-      structuredOutput: true,
-      vision: true,
     },
     contextWindowTokens: 1_000_000,
     description:
@@ -145,17 +93,8 @@ const saygmChatModels: AIChatModelCard[] = [
     generation: 'gpt-5.4',
     id: 'gpt-5.4',
     maxOutput: 128_000,
-    pricing: {
-      currency: 'USD',
-      units: [
-        { name: 'textInput', rate: 2.5, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.25, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 15, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
     settings: {
       extendParams: ['gpt5_2ReasoningEffort', 'textVerbosity'],
-      searchImpl: 'params',
     },
     type: 'chat',
   },
@@ -163,9 +102,6 @@ const saygmChatModels: AIChatModelCard[] = [
     abilities: {
       functionCall: true,
       reasoning: true,
-      search: true,
-      structuredOutput: true,
-      vision: true,
     },
     contextWindowTokens: 1_000_000,
     description:
@@ -176,17 +112,8 @@ const saygmChatModels: AIChatModelCard[] = [
     generation: 'gpt-5.4',
     id: 'gpt-5.4-mini',
     maxOutput: 128_000,
-    pricing: {
-      currency: 'USD',
-      units: [
-        { name: 'textInput', rate: 0.75, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.075, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 4.5, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
     settings: {
       extendParams: ['gpt5_2ReasoningEffort', 'textVerbosity'],
-      searchImpl: 'params',
     },
     type: 'chat',
   },
@@ -194,9 +121,6 @@ const saygmChatModels: AIChatModelCard[] = [
     abilities: {
       functionCall: true,
       reasoning: true,
-      search: true,
-      structuredOutput: true,
-      vision: true,
     },
     contextWindowTokens: 1_000_000,
     description:
@@ -207,17 +131,8 @@ const saygmChatModels: AIChatModelCard[] = [
     generation: 'gpt-5.4',
     id: 'gpt-5.4-nano',
     maxOutput: 128_000,
-    pricing: {
-      currency: 'USD',
-      units: [
-        { name: 'textInput', rate: 0.2, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.02, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 1.25, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
     settings: {
       extendParams: ['gpt5_2ReasoningEffort', 'textVerbosity'],
-      searchImpl: 'params',
     },
     type: 'chat',
   },
@@ -225,8 +140,6 @@ const saygmChatModels: AIChatModelCard[] = [
     abilities: {
       functionCall: true,
       reasoning: true,
-      search: true,
-      vision: true,
     },
     contextWindowTokens: 1_000_000,
     description:
@@ -237,17 +150,8 @@ const saygmChatModels: AIChatModelCard[] = [
     generation: 'o3',
     id: 'o3',
     maxOutput: 100_000,
-    pricing: {
-      currency: 'USD',
-      units: [
-        { name: 'textInput', rate: 2, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.5, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 8, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
     settings: {
       extendParams: ['reasoningEffort'],
-      searchImpl: 'params',
     },
     type: 'chat',
   },
@@ -255,8 +159,6 @@ const saygmChatModels: AIChatModelCard[] = [
     abilities: {
       functionCall: true,
       reasoning: true,
-      search: true,
-      vision: true,
     },
     contextWindowTokens: 1_000_000,
     description:
@@ -267,17 +169,8 @@ const saygmChatModels: AIChatModelCard[] = [
     generation: 'o4',
     id: 'o4-mini',
     maxOutput: 100_000,
-    pricing: {
-      currency: 'USD',
-      units: [
-        { name: 'textInput', rate: 1.1, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textInput_cacheRead', rate: 0.275, strategy: 'fixed', unit: 'millionTokens' },
-        { name: 'textOutput', rate: 4.4, strategy: 'fixed', unit: 'millionTokens' },
-      ],
-    },
     settings: {
       extendParams: ['reasoningEffort'],
-      searchImpl: 'params',
     },
     type: 'chat',
   },
